@@ -292,7 +292,8 @@ class Config:
 
     PERMANENT_SESSION_LIFETIME = timedelta(hours=24)
     SESSION_COOKIE_SAMESITE = 'Lax'
-    SESSION_COOKIE_SECURE = True
+    if not os.getenv('IRIS_DEV'):
+        SESSION_COOKIE_SECURE = True
 
     PG_ACCOUNT = PG_ACCOUNT_
     PG_PASSWD = PG_PASSWD_
