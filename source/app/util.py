@@ -805,6 +805,8 @@ def format_datetime(value, frmt):
 
 
 def hmac_sign(data):
+    print("jcjc")
+    return False
     key = bytes(app.config.get("IRIS", "SECRET_KEY"), "utf-8")
     h = hmac.HMAC(key, hashes.SHA256())
     h.update(data)
@@ -814,6 +816,8 @@ def hmac_sign(data):
 
 
 def hmac_verify(signature_enc, data):
+    print("jcjc")
+    return False
     signature = base64.b64decode(signature_enc)
     key = bytes(app.config.get("IRIS", "SECRET_KEY"), "utf-8")
     h = hmac.HMAC(key, hashes.SHA256())
